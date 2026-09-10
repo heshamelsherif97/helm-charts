@@ -51,8 +51,8 @@ config:
   # -- Port used for the health endpoint
   healthPort: 8080
 
-  # -- Controls whether the DaemonSet uses the host network. When null, inherits setupIptables for backwards compatibility.
-  hostNetwork: null
+  # -- When false, inherit setupIptables. When true, always use the host network.
+  hostNetwork: false
 
   setupInterface: true
 

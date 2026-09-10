@@ -59,7 +59,7 @@ helm install my-release oci://ghcr.io/deliveryhero/helm-charts/node-local-dns -f
 | config.enableLogging | bool | `false` | Set boolean to log DNS requests |
 | config.extraServerBlocks | string | `""` | Add extra server blocks to the generated configuration. |
 | config.healthPort | int | `8080` | Port used for the health endpoint |
-| config.hostNetwork | string | `nil` | Controls whether the DaemonSet uses the host network. When null, inherits setupIptables for backwards compatibility. |
+| config.hostNetwork | bool | `false` | When false, inherit setupIptables. When true, always use the host network. |
 | config.localDns | string | `"169.254.20.25"` |  |
 | config.noIPv6Lookups | bool | `false` | If true, return NOERROR when attempting to resolve an IPv6 address |
 | config.port.number | int | `53` | Port used for DNS traffic |
