@@ -1,6 +1,6 @@
 # node-local-dns
 
-![Version: 2.9.2](https://img.shields.io/badge/Version-2.9.2-informational?style=flat-square) ![AppVersion: 1.26.7](https://img.shields.io/badge/AppVersion-1.26.7-informational?style=flat-square)
+![Version: 2.10.0](https://img.shields.io/badge/Version-2.10.0-informational?style=flat-square) ![AppVersion: 1.26.7](https://img.shields.io/badge/AppVersion-1.26.7-informational?style=flat-square)
 
 A chart to install node-local-dns.
 
@@ -23,7 +23,7 @@ helm install --generate-name oci://ghcr.io/deliveryhero/helm-charts/node-local-d
 To install a specific version of this chart:
 
 ```console
-helm install --generate-name oci://ghcr.io/deliveryhero/helm-charts/node-local-dns --version 2.9.2
+helm install --generate-name oci://ghcr.io/deliveryhero/helm-charts/node-local-dns --version 2.10.0
 ```
 
 To install the chart with the release name `my-release`:
@@ -59,6 +59,7 @@ helm install my-release oci://ghcr.io/deliveryhero/helm-charts/node-local-dns -f
 | config.enableLogging | bool | `false` | Set boolean to log DNS requests |
 | config.extraServerBlocks | string | `""` | Add extra server blocks to the generated configuration. |
 | config.healthPort | int | `8080` | Port used for the health endpoint |
+| config.hostNetwork | string | `nil` | Controls whether the DaemonSet uses the host network. When null, inherits setupIptables for backwards compatibility. |
 | config.localDns | string | `"169.254.20.25"` |  |
 | config.noIPv6Lookups | bool | `false` | If true, return NOERROR when attempting to resolve an IPv6 address |
 | config.port.number | int | `53` | Port used for DNS traffic |

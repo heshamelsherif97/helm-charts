@@ -46,7 +46,11 @@ spec:
       {{- end }}
       priorityClassName: system-node-critical
       serviceAccountName: {{ include "node-local-dns.serviceAccountName" . }}
+      {{- if kindIs "bool" .Values.config.hostNetwork }}
+      hostNetwork: {{ .Values.config.hostNetwork }}
+      {{- else }}
       hostNetwork: {{ .Values.config.setupIptables }}
+      {{- end }}
       dnsPolicy: Default  # Don't use cluster DNS.
       tolerations:
       {{- toYaml .Values.tolerations | nindent 8 }}
